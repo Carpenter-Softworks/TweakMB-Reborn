@@ -1,0 +1,30 @@
+{
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
+    },
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "editor.formatOnSave": true,
+  "json.schemaDownload.enable": false,
+  "python.analysis.autoIndent": true,
+  "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.enablePytestSupport": true,
+  "python.analysis.extraPaths": ["src"],
+  "python.analysis.generateWithTypeAnnotation": true,
+  "python.analysis.indexing": true,
+  "python.analysis.typeCheckingMode": "strict",
+  "python.testing.pytestEnabled": true,
+  "redhat.telemetry.enabled": false,
+  "workbench.startupEditor": "none"
+}

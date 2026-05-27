@@ -1,0 +1,8 @@
+{
+  "name": "tweakmb-reborn-tooling",
+  "private": true,
+  "description": "Dev tooling only (jscpd copy-paste detector). Not a runtime dependency.",
+  "devDependencies": {
+    "jscpd": "4.2.2"
+  }
+}

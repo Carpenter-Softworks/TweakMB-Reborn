@@ -1,0 +1,64 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tweakmb-reborn"
+version = "0.1.0"
+description = "GUI for tweaking Mount & Blade: Warband Native v1.174 "
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "dearpygui>=2.3.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pip-tools>=7.5",
+    "pyright>=1.1",
+    "pytest>=9.0",
+    "pytest-cov>=7.0",
+    "ruff>=0.15",
+    "vulture>=2.16",
+]
+
+# Tell hatchling where to find the package (src layout)
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 80
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.pyright]
+typeCheckingMode = "strict"
+pythonVersion = "3.13"
+include = ["src", "tests"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "--cov=src --cov-report=term-missing --cov-fail-under=100"
+
+[tool.coverage.run]
+omit = [
+    "src/main.py",
+    "src/ui/_dpg.py",
+    "src/ui/app.py",
+    "src/ui/panels/*",
+    "**/__init__.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if TYPE_CHECKING:",
+    "raise NotImplementedError",
+]
