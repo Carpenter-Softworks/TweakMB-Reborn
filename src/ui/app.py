@@ -6,6 +6,7 @@ Manages the sidebar tree, panel switching, module loading, and save flow.
 from __future__ import annotations
 
 import os
+import sys
 
 from core.backup import BackupManager
 from core.module_loader import ModuleSet
@@ -40,7 +41,13 @@ TREE: list[tuple[str, type[BasePanel] |
     ("Faction Colors",    FactionColorsPanel,   []),
 ]
 
-_DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
+# When frozen by PyInstaller, read the JSON next to the .exe so end-users
+# can experiment by editing it. In dev, fall back to the source-tree copy.
+_DATA_DIR = (
+    os.path.dirname(sys.executable)
+    if getattr(sys, "frozen", False)
+    else os.path.join(os.path.dirname(__file__), "..", "data")
+)
 _TWEAKS_JSON = os.path.join(_DATA_DIR, "tweaks_native_1174.json")
 
 _DEFAULT_MODULE_PATH = (

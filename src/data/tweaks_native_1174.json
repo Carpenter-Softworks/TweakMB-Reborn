@@ -1,6 +1,5 @@
 {
   "version": "1.174",
-  "source_table": "WB_Native_1143",
   "tweaks": [
     {
       "tweak_name": "AIPartySize_BasePartySize",

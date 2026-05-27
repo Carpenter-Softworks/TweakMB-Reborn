@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "tweakmb-reborn"
-version = "0.1.0"
+version = "0.0.1"
 description = "GUI for tweaking Mount & Blade: Warband Native v1.174 "
 readme = "README.md"
 requires-python = ">=3.13"
@@ -15,6 +15,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pip-tools>=7.5",
+    "pyinstaller>=6.20",
     "pyright>=1.1",
     "pytest>=9.0",
     "pytest-cov>=7.0",

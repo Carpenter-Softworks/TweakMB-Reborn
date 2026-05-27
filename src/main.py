@@ -1,7 +1,11 @@
 """TweakMB Reborn — entry point."""
 
+from importlib.metadata import version
+
 from ui._dpg import dpg
 from ui.app import App
+
+_VERSION = version("tweakmb-reborn")
 
 
 def main() -> None:
@@ -11,7 +15,7 @@ def main() -> None:
         pass  # Use DPG's built-in default font
 
     dpg.create_viewport(
-        title="TweakMB Reborn v1.0 - Warband Native 1.174",
+        title=f"TweakMB Reborn v{_VERSION} - Warband Native 1.174",
         width=1100,
         height=750,
         min_width=800,
