@@ -1,10 +1,11 @@
-.PHONY: help branch check clean install rebase tag test untag
+.PHONY: help branch build check clean install rebase tag test untag
 
 MAKEFLAGS += --no-print-directory
 
 help:
 	@echo "TweakMB-Reborn Dev Tools - Available commands:"
 	@echo "  make branch           - create or reset a git branch from a source (prompts for names and pushes)"
+	@echo "  make build            - prompt for version, update pyproject.toml, and run pyinstaller to produce dist/TweakMB-Reborn"
 	@echo "  make check            - verify local environment (Python >=3.13 and .venv present)"
 	@echo "  make clean            - remove Python build artifacts (__pycache__, .pytest_cache, dist, etc.)"
 	@echo "  make install          - create .venv (if missing), pip install -e '.[dev]' and regenerate requirements.txt"
@@ -15,6 +16,9 @@ help:
 
 branch:
 	@scripts/branch.sh
+ 
+build:
+	@scripts/build.sh
  
 check:
 	@scripts/check.sh
